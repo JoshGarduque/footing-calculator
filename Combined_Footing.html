@@ -99,8 +99,13 @@
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="number" id="thickness" class="form-control" placeholder="thickness" step="any" required/>
-                                    <label for="thickness" class="overflow-hidden">Thickness (m)</label>
+                                    <input type="number" id="hc" class="form-control" placeholder="hc" step="any" required/>
+                                    <label for="hc" class="overflow-hidden">Height of Concrete (m)</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="surcharge" class="form-control" placeholder="surcharge" step="any"/>
+                                    <label for="surcharge" class="overflow-hidden">Surcharge Load (kPa)</label>
                                 </div>
 
                                 <div class="form-floating mb-3">
@@ -117,6 +122,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <p class="fs-4 fw-bold card-title">EFFECTIVE DEPTH</p>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="thickness" class="form-control" placeholder="thickness" step="any" required/>
+                                    <label for="thickness" class="overflow-hidden">Thickness (m)</label>
+                                </div>
 
                                 <div class="form-floating mb-3">
                                     <input type="number" id="steel_diameter" class="form-control" placeholder="steel_diameter" step="any" required/>
