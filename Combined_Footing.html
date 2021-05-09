@@ -70,445 +70,314 @@
         
         <form class="container needs-validation"  action="javascript: CombinedFootingCalc();" novalidate>
             
-            <!-- ROW 1 | QEFF | EFFECTIVE DEPTH -->
-                <div class="row w-auto p-3">
-                    <!-- QEFF -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">EFFECTIVE BEARING STRENGTH</p>
+            <!-- ROW 1 GIVEN -->
+            <div class="row w-auto p-3 justify-content-center">
+                <div class="col-md-7 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="fs-4 fw-bold card-title">GIVEN</p>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="qall" class="form-control" placeholder="qall" step="any" required/>
-                                    <label for="qall" class="overflow-hidden">Allowable Bearing Strength (kPa)</label>
-                                </div>
-                                    
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="ysoil" class="form-control" placeholder="ysoil" step="any" required/>
-                                    <label for="ysoil" class="overflow-hidden">Unit Weight of Soil (kN/m<sup>3</sup>)</label>
-                                </div>
-                                
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="hs" class="form-control" placeholder="hs" step="any" required/>
-                                    <label for="hs" class="overflow-hidden">Height of Soil (m)</label>
-                                </div>
+                            <p class="fs-6 fw-bold mt-4" style="color: #198754">EXTERIOR COLUMN DETAILS</p>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="yc" class="form-control" placeholder="yc" step="any" required/>
-                                    <label for="yc" class="overflow-hidden">Unit Weight of Concrete (kN/m<sup>3</sup>)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="hc" class="form-control" placeholder="hc" step="any" required/>
-                                    <label for="hc" class="overflow-hidden">Height of Concrete (m)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="surcharge" class="form-control" placeholder="surcharge" step="any"/>
-                                    <label for="surcharge" class="overflow-hidden">Surcharge Load (kPa)</label>
-                                    <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="qeff" class="form-control" placeholder="qeff" step="any" disabled/>
-                                    <label for="qeff" class="overflow-hidden fw-bold">Effective Bearing Strength (kPa)</label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="DL1" class="form-control" placeholder="DL1" step="any" required/>
+                                <label for="DL1" class="overflow-hidden">Dead Load (kN)</label>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- EFFECTIVE DEPTH -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">EFFECTIVE DEPTH</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="thickness" class="form-control" placeholder="thickness" step="any" required/>
-                                    <label for="thickness" class="overflow-hidden">Thickness (m)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="steel_diameter" class="form-control" placeholder="steel_diameter" step="any" required/>
-                                    <label for="steel_diameter" class="overflow-hidden">Diameter of Steel (mm)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="concrete_cover" class="form-control" placeholder="concrete_cover" step="any" required/>
-                                    <label for="concrete_cover" class="overflow-hidden">Concrete Cover (m)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="eff_depth" class="form-control" placeholder="eff_depth" step="any"/>
-                                    <label for="eff_depth" class="overflow-hidden fw-bold">Effective Depth (m)</label>
-                                    <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="LL1" class="form-control" placeholder="LL1" step="any" required/>
+                                <label for="LL1" class="overflow-hidden">Live Load (kN)</label>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            
-            <!-- ROW 2 | EXTERIOR COLUMN LOAD | INTERIOR COLUMN LOAD -->
-                <div class="row w-auto p-3">
-                    <!-- EXTERIOR COLUMN LOAD -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">EXTERIOR COLUMN</p>
-                                
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="DL1" class="form-control" placeholder="DL1" step="any" required/>
-                                    <label for="DL1" class="overflow-hidden">Dead Load (kN)</label>
-                                </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="LL1" class="form-control" placeholder="LL1" step="any" required/>
-                                    <label for="LL1" class="overflow-hidden">Live Load (kN)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="load1" class="form-control" placeholder="load1" step="any" disabled/>
-                                    <label for="load1" class="overflow-hidden fw-bold">Load (kN)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="exColqult" class="form-control" placeholder="exColqult" step="any" disabled/>
-                                    <label for="exColqult" class="overflow-hidden fw-bold text-wrap">q<sub><i>ult</i></sub> Exterior (kPa)</label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="exColDim" class="form-control" placeholder="exColDim" step="any" required/>
+                                <label for="exColDim" class="overflow-hidden">Exterior Column Dimension (mm)</label>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- INTERIOR COLUMN LOAD -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">INTERIOR COLUMN</p>
-                                
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="DL2" class="form-control" placeholder="DL2" step="any" required/>
-                                    <label for="DL2" class="overflow-hidden">Dead Load (kN)</label>
-                                </div>
+                            <p class="fs-6 fw-bold mt-4" style="color: #198754">INTERIOR COLUMN DETAILS</p>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="LL2" class="form-control" placeholder="LL2" step="any" required/>
-                                    <label for="LL2" class="overflow-hidden">Live Load (kN)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="load2" class="form-control" placeholder="load2" step="any" disabled/>
-                                    <label for="load2" class="overflow-hidden fw-bold">Load (kN)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="intColqult" class="form-control" placeholder="intColqult" step="any" disabled/>
-                                    <label for="intColqult" class="overflow-hidden fw-bold">q<sub><i>ult</i></sub> Interior (kPa)</label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="DL2" class="form-control" placeholder="DL2" step="any" required/>
+                                <label for="DL2" class="overflow-hidden">Dead Load (kN)</label>
                             </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="LL2" class="form-control" placeholder="LL2" step="any" required/>
+                                <label for="LL2" class="overflow-hidden">Live Load (kN)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="intColDim" class="form-control" placeholder="intColDim" step="any" required/>
+                                <label for="intColDim" class="overflow-hidden">Interior Column Dimension (mm)</label>
+                            </div>
+
+                            <div class="form-floating mb-3 mt-5">
+                                <input type="number" id="c2c_dist" class="form-control" placeholder="c2c_dist" step="any" required/>
+                                <label for="c2c_dist" class="overflow-hidden">Center to Center Distance (m)</label>
+                            </div>
+
+                            <div class="form-floating mb-3 mt-5">
+                                <input type="number" id="fc1" class="form-control" placeholder="fc1" step="any" required/>
+                                <label for="fc1" class="overflow-hidden">Compressive Strength of Concrete "fc'" (MPa)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="fy" class="form-control" placeholder="fy" step="any" required/>
+                                <label for="fy" class="overflow-hidden">Reinforcement Yield Point Stress "fy" (MPa)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ysoil" class="form-control" placeholder="ysoil" step="any" required/>
+                                <label for="ysoil" class="overflow-hidden">Unit Weight of Soil "&gamma;<sub>soil</sub>" (kN/m<sup>3</sup>)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="yc" class="form-control" placeholder="yc" step="any" required/>
+                                <label for="yc" class="overflow-hidden">Unit Weight of Concrete "&gamma;<sub>c</sub>" (kN/m<sup>3</sup>)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="qall" class="form-control" placeholder="qall" step="any" required/>
+                                <label for="qall" class="overflow-hidden">Allowable Bearing Strength "q<sub>all</sub>" (kPa)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="hs" class="form-control" placeholder="hs" step="any" required/>
+                                <label for="hs" class="overflow-hidden">Height of Soil (m)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="hc" class="form-control" placeholder="hc" step="any" required/>
+                                <label for="hc" class="overflow-hidden">Height of Concrete (m)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="surcharge" class="form-control" placeholder="surcharge" step="any"/>
+                                <label for="surcharge" class="overflow-hidden">Surcharge Load (kPa)</label>
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="thickness" class="form-control" placeholder="thickness" step="any" required/>
+                                <label for="thickness" class="overflow-hidden">Thickness (m)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="steel_diameter" class="form-control" placeholder="steel_diameter" step="any" required/>
+                                <label for="steel_diameter" class="overflow-hidden">Diameter of Steel (mm)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="phi" class="form-control" placeholder="phi" step="any" required/>
+                                <label for="phi" class="overflow-hidden">Phi (&Phi;)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="concrete_cover" class="form-control" placeholder="concrete_cover" step="any" required/>
+                                <label for="concrete_cover" class="overflow-hidden">Concrete Cover (m)</label>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
 
-            <!-- ROW 3 | COLUMN DETAIL | AREA-->
-                <div class="row w-auto p-3">
-                    <!-- COLUMN DETAILS-->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">COLUMN DETAILS</p>
-                                
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="c2c_dist" class="form-control" placeholder="c2c_dist" step="any" required/>
-                                    <label for="c2c_dist" class="overflow-hidden">Center to Center Distance (m)</label>
-                                </div>
+             <!-- ROW 2 RESULTS -->
+            <div class="row w-auto p-3 justify-content-center">
+                <div class="col-md-7 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="fs-4 fw-bold card-title">RESULTS</p>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="exColDim" class="form-control" placeholder="exColDim" step="any" required/>
-                                    <label for="exColDim" class="overflow-hidden">Exterior Column Dimension (mm)</label>
-                                </div>
+                            <p class="fs-6 fw-bold mt-4" style="color: #198754">FOOTING DIMENSIONS</p>
 
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="intColDim" class="form-control" placeholder="intColDim" step="any" required/>
-                                    <label for="intColDim" class="overflow-hidden">Interior Column Dimension (mm)</label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="eff_depth" class="form-control" placeholder="eff_depth" step="any"/>
+                                <label for="eff_depth" class="overflow-hidden fw-bold">Effective Depth (m)</label>
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- AREA -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">AREA OF FOOTING</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="length" class="form-control" placeholder="length" step="any"/>
-                                    <label for="length" class="overflow-hidden">Length (m)</label>
-                                    <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
-                                </div>
-                                
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="width" class="form-control" placeholder="width" step="any"/>
-                                    <label for="width" class="overflow-hidden">Width (m)</label>
-                                    <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="area" class="form-control" placeholder="area" step="any" disabled/>
-                                    <label for="area" class="overflow-hidden"><b>Area (m<sup>2</sup>)</b></label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="qeff" class="form-control" placeholder="qeff" step="any" disabled/>
+                                <label for="qeff" class="overflow-hidden fw-bold">Effective Bearing Strength "q<sub>eff</sub>" (kPa)</label>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-            <!-- ROW 4 | QULT | UPWARD NET FORCE -->
-                <div class="row w-auto p-3">
-                    <!-- QULT -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">ULTIMATE BEARING STRENGTH</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="qult" class="form-control" placeholder="qult" step="any" disabled/>
-                                    <label for="qult" class="overflow-hidden"><b>Ultimate Bearing Strength (kPa)</b></label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="area" class="form-control" placeholder="area" step="any" disabled/>
+                                <label for="area" class="overflow-hidden"><b>Base Area (m<sup>2</sup>)</b></label>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- UPWARD NET FORCE -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">NET UPWARD FORCE</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="netUpForce" class="form-control" placeholder="netUpForce" step="any" disabled/>
-                                    <label for="netUpForce" class="overflow-hidden"><b>Net Upward Force (kN/m)</b></label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="length" class="form-control" placeholder="length" step="any"/>
+                                <label for="length" class="overflow-hidden"><b>Length of Footing (m)</b></label>
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- ROW 5 | SHEAR | ULTIMATE MOMENT CAPACITY -->
-                <div class="row w-auto p-3">
-                    <!-- SHEAR -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">SHEAR</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="fc1" class="form-control" placeholder="fc1" step="any" required/>
-                                    <label for="fc1" class="overflow-hidden">Compressive Strength of Concrete (MPa)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="v1" class="form-control" placeholder="v1" step="any" disabled/>
-                                    <label for="v1" class="overflow-hidden"><b>V<sub>1</sub></b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="v2" class="form-control" placeholder="v2" step="any" disabled/>
-                                    <label for="v2" class="overflow-hidden"><b>V<sub>2</sub></b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="v3" class="form-control" placeholder="v3" step="any" disabled/>
-                                    <label for="v3" class="overflow-hidden"><b>V<sub>3</sub></b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="v4" class="form-control" placeholder="v4" step="any" disabled/>
-                                    <label for="v4" class="overflow-hidden"><b>V<sub>4</sub></b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="v5" class="form-control" placeholder="v5" step="any" disabled/>
-                                    <label for="v5" class="overflow-hidden"><b>V<sub>5</sub></b></label>
-                                </div>
-
+                            
+                            <div class="form-floating mb-3">
+                                <input type="number" id="width" class="form-control" placeholder="width" step="any"/>
+                                <label for="width" class="overflow-hidden"><b>Width of Footing (m)</b></label>
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- ULTIMATE MOMENT CAPACITY -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">ULTIMATE MOMENT CAPACITY</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="moment2" class="form-control" placeholder="moment2" step="any" disabled/>
-                                    <label for="moment2" class="overflow-hidden"><b>M2<sup>1</sup> (kN*m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="moment3" class="form-control" placeholder="moment3" step="any" disabled/>
-                                    <label for="moment3" class="overflow-hidden"><b>M3<sup>1</sup> (kN*m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="ult_moment" class="form-control" placeholder="ult_moment" step="any" disabled/>
-                                    <label for="ult_moment" class="overflow-hidden"><b>M<sub><i>u</i></sub> (kN*m)</b></label>
-                                </div>
-
+                            <div class="form-floating mb-3">
+                                <input type="number" id="qult" class="form-control" placeholder="qult" step="any" disabled/>
+                                <label for="qult" class="overflow-hidden"><b>Ultimate Bearing Strength "q<sub>ult</sub>" (kPa)</b></label>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-            <!-- ROW 6 | RESULT -->
-                <div class="row w-auto p-3">
-                    <!-- RESULT -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">RESULT</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="fy" class="form-control" placeholder="fy" step="any" required/>
-                                    <label for="fy" class="overflow-hidden">Reinforcement Yield Point Stress (MPa)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="phi" class="form-control" placeholder="phi" step="any" required/>
-                                    <label for="phi" class="overflow-hidden">Phi (&Phi;)</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="omega" class="form-control" placeholder="omega" step="any" disabled/>
-                                    <label for="omega" class="overflow-hidden"><b>Omega (&omega;)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="rho_actual" class="form-control" placeholder="rho_actual" step="any" disabled/>
-                                    <label for="rho_actual" class="overflow-hidden"><b>Rho (&rho;) Actual </b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="rho_min" class="form-control" placeholder="rho_min" step="any" disabled/>
-                                    <label for="rho_min" class="overflow-hidden"><b>Rho (&rho;) Minimum</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="steel_area" class="form-control" placeholder="steel_area" step="any" disabled/>
-                                    <label for="steel_area" class="overflow-hidden"><b>Area of Steel (mm<sup>2</sup>)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="bar_num" class="form-control" placeholder="bar_num" step="any" disabled/>
-                                    <label for="bar_num" class="overflow-hidden"><b>Number of Bars (pieces)</b></label>
-                                </div>
-
+                            <div class="form-floating mb-3 mt-5">
+                                <input type="number" id="netUpForce" class="form-control" placeholder="netUpForce" step="any" disabled/>
+                                <label for="netUpForce" class="overflow-hidden"><b>Net Upward Force (kN/m)</b></label>
                             </div>
+
+                            <p class="fs-6 fw-bold mt-5" style="color: #198754">SHEAR</p>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="v1" class="form-control" placeholder="v1" step="any" disabled/>
+                                <label for="v1" class="overflow-hidden"><b>V<sub>1</sub></b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="v2" class="form-control" placeholder="v2" step="any" disabled/>
+                                <label for="v2" class="overflow-hidden"><b>V<sub>2</sub></b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="v3" class="form-control" placeholder="v3" step="any" disabled/>
+                                <label for="v3" class="overflow-hidden"><b>V<sub>3</sub></b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="v4" class="form-control" placeholder="v4" step="any" disabled/>
+                                <label for="v4" class="overflow-hidden"><b>V<sub>4</sub></b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="v5" class="form-control" placeholder="v5" step="any" disabled/>
+                                <label for="v5" class="overflow-hidden"><b>V<sub>5</sub></b></label>
+                            </div>
+
+                            <p class="fs-6 fw-bold mt-5" style="color: #198754">ULTIMATE MOMENT CAPACITY</p>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="moment2" class="form-control" placeholder="moment2" step="any" disabled/>
+                                <label for="moment2" class="overflow-hidden"><b>M2' (kN*m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="moment3" class="form-control" placeholder="moment3" step="any" disabled/>
+                                <label for="moment3" class="overflow-hidden"><b>M3' (kN*m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ult_moment" class="form-control" placeholder="ult_moment" step="any" disabled/>
+                                <label for="ult_moment" class="overflow-hidden"><b>M<sub>u</sub> (kN*m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3 mt-5">
+                                <input type="number" id="omega" class="form-control" placeholder="omega" step="any" disabled/>
+                                <label for="omega" class="overflow-hidden"><b>Omega (&omega;)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="rho_actual" class="form-control" placeholder="rho_actual" step="any" disabled/>
+                                <label for="rho_actual" class="overflow-hidden"><b>Rho Actual (&rho;<sub>actual</sub>)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="rho_min" class="form-control" placeholder="rho_min" step="any" disabled/>
+                                <label for="rho_min" class="overflow-hidden"><b>Rho Minimum (&rho;<sub>min</sub>)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="steel_area" class="form-control" placeholder="steel_area" step="any" disabled/>
+                                <label for="steel_area" class="overflow-hidden"><b>Area of Steel (mm<sup>2</sup>)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="bar_num" class="form-control" placeholder="bar_num" step="any" style="background-color: #198754; color:white" disabled/>
+                                <label for="bar_num" class="overflow-hidden" style="color:#ffffff"><b>Number of Steel Bars (pieces)</b></label>
+                            </div>
+
+                            <p class="fs-6 fw-bold mt-5" style="color: #198754">TRANSVERSE INTERIOR</p>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="int_base" class="form-control" placeholder="int_base" step="any" disabled/>
+                                <label for="int_base" class="overflow-hidden"><b>Interior Base (mm)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="netUpForce_int" class="form-control" placeholder="netUpForce_int" step="any" disabled/>
+                                <label for="netUpForce_int" class="overflow-hidden"><b>Interior Net Upward Force (kN/m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ult_moment_int" class="form-control" placeholder="ult_moment_int" step="any" disabled/>
+                                <label for="ult_moment_int" class="overflow-hidden"><b>M<sub>u</sub> Interior (kN*m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="omega_int" class="form-control" placeholder="omega_int" step="any" disabled/>
+                                <label for="omega_int" class="overflow-hidden"><b>Omega (&omega;) - Interior</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="rho_actual_int" class="form-control" placeholder="rho_actual_int" step="any" disabled/>
+                                <label for="rho_actual_int" class="overflow-hidden"><b>Rho Actual (&rho;<sub>actual</sub>) - Interior</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="steel_area_int" class="form-control" placeholder="steel_area_int" step="any" disabled/>
+                                <label for="steel_area_int" class="overflow-hidden"><b>Area of Steel - Interior (mm<sup>2</sup>)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="bar_num_int" class="form-control" placeholder="bar_num_int" step="any" style="background-color: #198754; color:white" disabled/>
+                                <label for="bar_num_int" class="overflow-hidden" style="color:#ffffff"><b>Number of Steel Bars (pieces)</b></label>
+                            </div>
+
+
+                            <p class="fs-6 fw-bold mt-5" style="color: #198754">TRANSVERSE EXTERIOR</p>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ex_base" class="form-control" placeholder="ex_base" step="any" disabled/>
+                                <label for="ex_base" class="overflow-hidden"><b>Exterior Base (mm)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="netUpForce_ex" class="form-control" placeholder="netUpForce_ex" step="any" disabled/>
+                                <label for="netUpForce_ex" class="overflow-hidden"><b>Exterior Net Upward Force (kN/m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ult_moment_ex" class="form-control" placeholder="ult_moment_ex" step="any" disabled/>
+                                <label for="ult_moment_ex" class="overflow-hidden"><b>M<sub>u</sub> Exterior (kN*m)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="omega_ex" class="form-control" placeholder="omega_ex" step="any" disabled/>
+                                <label for="omega_ex" class="overflow-hidden"><b>Omega (&omega;) - Exterior</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="rho_actual_ex" class="form-control" placeholder="rho_actual_ex" step="any" disabled/>
+                                <label for="rho_actual_ex" class="overflow-hidden"><b>Rho Actual (&rho;<sub>actual</sub>) - Exterior</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="steel_area_ex" class="form-control" placeholder="steel_area_ex" step="any" disabled/>
+                                <label for="steel_area_ex" class="overflow-hidden"><b>Area of Steel - Exterior (mm<sup>2</sup>)</b></label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="bar_num_ex" class="form-control" placeholder="bar_num_ex" step="any" style="background-color: #198754; color:white" disabled/>
+                                <label for="bar_num_ex" class="overflow-hidden" style="color:#ffffff"><b>Number of Steel Bars (pieces)</b></label>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
 
-            <!-- ROW 7 | TRANSVERSE INTERIOR | TRANSVERSE EXTERIOR -->
-                <div class="row w-auto p-3">
-                    <!-- TRANSVERSE INTERIOR -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">TRANSVERSE INTERIOR</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="int_base" class="form-control" placeholder="int_base" step="any" disabled/>
-                                    <label for="int_base" class="overflow-hidden"><b>Interior Base (mm)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="netUpForce_int" class="form-control" placeholder="netUpForce_int" step="any" disabled/>
-                                    <label for="netUpForce_int" class="overflow-hidden"><b>Interior Net Upward Force (kN/m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="ult_moment_int" class="form-control" placeholder="ult_moment_int" step="any" disabled/>
-                                    <label for="ult_moment_int" class="overflow-hidden"><b>M<sub><i>u</i></sub> Interior (kN*m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="omega_int" class="form-control" placeholder="omega_int" step="any" disabled/>
-                                    <label for="omega_int" class="overflow-hidden"><b>Omega (&omega;) - Interior</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="rho_actual_int" class="form-control" placeholder="rho_actual_int" step="any" disabled/>
-                                    <label for="rho_actual_int" class="overflow-hidden"><b>Rho (&rho;) Actual - Interior</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="steel_area_int" class="form-control" placeholder="steel_area_int" step="any" disabled/>
-                                    <label for="steel_area_int" class="overflow-hidden"><b>Area of Steel - Interior (mm<sup>2</sup>)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="bar_num_int" class="form-control" placeholder="bar_num_int" step="any" disabled/>
-                                    <label for="bar_num_int" class="overflow-hidden"><b>Number of Bars (pieces)</b></label>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TRANSVERSE EXTERIOR -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="fs-4 fw-bold card-title">TRANSVERSE EXTERIOR</p>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="ex_base" class="form-control" placeholder="ex_base" step="any" disabled/>
-                                    <label for="ex_base" class="overflow-hidden"><b>Exterior Base (mm)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="netUpForce_ex" class="form-control" placeholder="netUpForce_ex" step="any" disabled/>
-                                    <label for="netUpForce_ex" class="overflow-hidden"><b>Exterior Net Upward Force (kN/m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="ult_moment_ex" class="form-control" placeholder="ult_moment_ex" step="any" disabled/>
-                                    <label for="ult_moment_ex" class="overflow-hidden"><b>M<sub><i>u</i></sub> Exterior (kN*m)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="omega_ex" class="form-control" placeholder="omega_ex" step="any" disabled/>
-                                    <label for="omega_ex" class="overflow-hidden"><b>Omega (&omega;) - Exterior</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="rho_actual_ex" class="form-control" placeholder="rho_actual_ex" step="any" disabled/>
-                                    <label for="rho_actual_ex" class="overflow-hidden"><b>Rho (&rho;) Actual - Exterior</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="steel_area_ex" class="form-control" placeholder="steel_area_ex" step="any" disabled/>
-                                    <label for="steel_area_ex" class="overflow-hidden"><b>Area of Steel - Exterior (mm<sup>2</sup>)</b></label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" id="bar_num_ex" class="form-control" placeholder="bar_num_ex" step="any" disabled/>
-                                    <label for="bar_num_ex" class="overflow-hidden"><b>Number of Bars (pieces)</b></label>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             <!-- SUBMIT BUTTON -->
             <button type="submit" class="floating-btn"><span class="bi bi-calculator-fill"></span></button>
