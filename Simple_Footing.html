@@ -203,15 +203,15 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="number" id="length" class="form-control" placeholder="length" step="any" disabled/>
+                                <input type="number" id="length" class="form-control" placeholder="length" step="any"/>
                                 <label for="length" class="overflow-hidden"><b>Length of Footing (m)</b></label>
-                                <!-- <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p> -->
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
                             </div>
                             
                             <div class="form-floating mb-3">
-                                <input type="number" id="width" class="form-control" placeholder="width" step="any" disabled/>
+                                <input type="number" id="width" class="form-control" placeholder="width" step="any"/>
                                 <label for="width" class="overflow-hidden"><b>Width of Footing (m)</b></label>
-                                <!-- <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p> -->
+                                <p class="fs-6 text-muted"><i>*Leave blank if not given</i></p>
                             </div>
 
                             <div class="form-floating mb-3">
@@ -399,7 +399,6 @@
         
         <!-- VALIDATION SCRIPT -->
         <script>
-            
             // Example starter JavaScript for disabling form submissions if there are invalid fields
             (function () {
             'use strict'
@@ -415,15 +414,11 @@
                     event.preventDefault()
                     event.stopPropagation()
                     }
-                    else{
-                        SimpleFootingCalc()
-                    }
                     
                     form.classList.add('was-validated')
                 }, false)
                 })
             })()
-            
         </script>
 
     </body>
